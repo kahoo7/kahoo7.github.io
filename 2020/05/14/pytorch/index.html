@@ -5,18 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>pytorch框架的安装 - WonderKahoo</title>
+    <title>人工智能部分相关框架的安装 - WonderKahoo</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="Pytorch框架的安装
+    <meta name="description" content="
 
-
-
-
-
-"> 
+前言前几天因为人工智能导论作业要求安装 pytorch 框架来做一些实验，还有报名参加了一个学校的人工只能算法挑战赛，所以在主机上安装了 pytorch 跟 tensorflow。摸索出来的安装,"> 
     <meta name="author" content="Kahoo Wong"> 
     <link rel="alternative" href="atom.xml" title="WonderKahoo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -44,7 +40,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">pytorch框架的安装</h3>
+    <h3 class="subtitle">人工智能部分相关框架的安装</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -59,19 +55,57 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">pytorch框架的安装</h1>
+        <h1 class="title">人工智能部分相关框架的安装</h1>
         <div class="stuff">
             <span>五月 14, 2020</span>
             
 
         </div>
         <div class="content markdown">
-            <h2 id="Pytorch框架的安装"><a href="#Pytorch框架的安装" class="headerlink" title="Pytorch框架的安装"></a>Pytorch框架的安装</h2><hr>
+            <hr>
 
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前几天因为人工智能导论作业要求安装 pytorch 框架来做一些实验，还有报名参加了一个学校的人工只能算法挑战赛，所以在主机上安装了 pytorch 跟 tensorflow。摸索出来的安装过程还是比较漫长的。</p>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><h5 id="0-安装平台及方案"><a href="#0-安装平台及方案" class="headerlink" title="0. 安装平台及方案"></a>0. 安装平台及方案</h5><ul>
+<li>系统：win 10</li>
+<li>方案：在主机上通过 python+anaconda 来创建 pytorch/tensorflow 的虚拟环境</li>
+<li>提示：如果仅仅只需要安装 tensorflow，建议直接跳转 <a href="https://tensorflow.google.cn/install" target="_blank" rel="noopener">Tensorflow 官网 install 页面</a></li>
+</ul>
+<h5 id="1-安装-python（这部分就不多赘述了）"><a href="#1-安装-python（这部分就不多赘述了）" class="headerlink" title="1. 安装 python（这部分就不多赘述了）"></a>1. 安装 python（这部分就不多赘述了）</h5><h5 id="2-安装-anaconda"><a href="#2-安装-anaconda" class="headerlink" title="2. 安装 anaconda"></a>2. 安装 anaconda</h5><ul>
+<li>下载 anaconda 镜像，这里因为去官网下载会有速度上的限制，所以推荐去清华镜像站下载：</li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华镜像站</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">anaconda 下载页面</a></li>
+<li>这里建议先按更新日期排序，找到最新的 anaconda3（别下到 anaconda1 了）然后选择 64 位版本的.exe 文件</li>
+<li>剩余的配置方面我就不多说了，毕竟装 python 的有很多都是 python+anaconda</li>
+</ul>
+<h5 id="3-安装-pytorch"><a href="#3-安装-pytorch" class="headerlink" title="3. 安装 pytorch"></a>3. 安装 pytorch</h5><ul>
+<li><p>用<b>管理员权限</b>打开 anaconda promt（默认位置都是 c:\…….的位置，根据个人需要调整设置）</p>
+</li>
+<li><p>创建好文件夹（根据需要执行这一步）</p>
+</li>
+<li><p>输入命令 <code>conda create --name pytorch python=3.6 anaconda</code>，来建立 pytorch 的虚拟环境(命令中的 pytorch 是虚拟环境的名称)</p>
+</li>
+<li><p>创建完成后，输入 <code>activate pytorch</code> 进入虚拟环境，可以通过输入命令 <code>conda env list</code> ，看到当前系统 anaconda 下所有的虚拟环境，其中 base 是 anaconda 本身带有的，pytorch 是新建的，后边括号中有星星（*）的就是当前所在环境</p>
+</li>
+<li><p>此时还可以通过输入 <code>python</code> 来确认是否成功进入环境中，若出现警告 ⚠，则需要根据警告内容检查配置过程，成功的应该是跟在 idle 中的界面内容一样的</p>
+</li>
+<li><p>然后就是安装 pytorch 相关的库了，此处可以在官网安装也可以从别的源安装，这里同样的推荐从清华源安装，官网的速度简直不能恭维，但是可以从<a href="https://pytorch.org/" target="_blank" rel="noopener">pytorch 官网 </a>处确认你需要的配置</p>
+</li>
+<li><p>切换源这里转载一个网站给大家，我就不重复别人的话了，《 <a href="https://blog.csdn.net/u013701860/article/details/104128743/" target="_blank" rel="noopener">使用国内镜像源安装 pytorch </a>》</p>
+</li>
+<li><p>设置好镜像源就可以进行下一步了，输入命令 <code>conda install pytorch torchvision cudatoolkit=10.2</code> ，其中 cudatookit 这个东西的需求及根据个人情况调整，前两个是必要的，然后能做的就是等待了，顺便吐槽一句，这里麻烦的地方就是这个源也没有想像中的稳定，如果出现下载失败的情况，一定要去 anaconda 放包的地方把 pytorch 有关的<b>文件夹</b>和<b>压缩包</b>都删除掉，不然下载成功的那次可能会出现失败的情况，不知道怎么找的可以再运行一次上面的安装命令，会显示一个 warning 提示你去哪里手动删除</p>
+</li>
+<li><p>最后就是安装成功后的测试了，输入 python 命令，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line">print(torch.__version__)</span><br></pre></td></tr></table></figure>
 
-
-
-
+<p>有版本输出信息即为安装成功</p>
+</li>
+<li><p>最后通过 <code>conda deactivate</code> 关闭虚拟环境</p>
+</li>
+</ul>
+<h5 id="4-安装-tensorflow2-0"><a href="#4-安装-tensorflow2-0" class="headerlink" title="4. 安装 tensorflow2.0"></a>4. 安装 tensorflow2.0</h5><ul>
+<li>tensorflow 相对于 pytorch 的安装真实地便利了许多，因为有一个类似于安装向导的网站相当于手把手教你安装，贴在下面</li>
+<li><a href="https://tensorflow.google.cn/install" target="_blank" rel="noopener">Tensorflow 官网 install 页面</a>（其实详细的官网说得很清楚了，无可挑剔的那种，本人一次成功，所以我也不多说什么）</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
